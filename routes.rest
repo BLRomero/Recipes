@@ -1,6 +1,6 @@
 ###localhost
 
-GET http://localhost:8080/recipe HTTP/1.1
+GET http://localhost:8080/recipes HTTP/1.1
 ###
 GET http://localhost:8080/nutritionalinfo HTTP/1.1
 ###
@@ -57,7 +57,7 @@ content-Type: application/json
     }
 
 ### Update Recipe  adding comments
-POST http://localhost:8080/recipes HTTP/1.1
+POST http://localhost:8080/recipes/65c3b0ed9e69cd6eb551bf0a HTTP/1.1
 content-Type: application/json
 
 {
@@ -96,3 +96,6 @@ content-Type: application/json
         { "user": "Dad", "comment": "Adding Sauted veggies are the best", "rating": 5 }
       ]
     }
+
+###DELETE recipe
+DELETE http://localhost:8080/recipes/65c3b0ed9e69cd6eb551bf0a HTTP/1.1
