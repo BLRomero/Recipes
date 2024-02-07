@@ -5,7 +5,7 @@ const doc = {
     title: 'My API',
     description: 'Recipes API'
   },
-  host: 'blromero-cse341-week2.onrender.com',
+  host: 'https://recipes-0w83.onrender.com',
   schemes: ['https']
 };
 

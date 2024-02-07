@@ -1,0 +1,98 @@
+###localhost
+
+GET http://localhost:8080/recipe HTTP/1.1
+###
+GET http://localhost:8080/nutritionalinfo HTTP/1.1
+###
+GET http://localhost:8080/ingredients HTTP/1.1
+
+###
+GET http://localhost:8080/recipes/65c3ac1f265ce56f072286f2 HTTP/1.1
+
+###
+GET http://localhost:8080/recipes/65c3ac1f265ce56f072286f3 HTTP/1.1
+
+###
+GET http://localhost:8080/recipes/65c3ac1f265ce56f072286f4 HTTP/1.1
+
+### Create recipe
+POST http://localhost:8080/recipes HTTP/1.1
+content-Type: application/json
+
+{
+      "recipeTitle": "Crepes",
+      "description": "Easy delicious breakfast",
+      "ingredients": [
+        { "name": "eggs", "quantity": "3", "unit": "egg" },
+        { "name": "milk", "quantity": "1.5  ", "unit": "cups" },
+        { "name": "butter", "quantity": "3", "unit": "Tbsp" },
+        { "name": "salt", "quantity": "1/2", "unit": "tsp" },
+        { "name": "flour", "quantity": "1", "unit": "cup" }
+      ],
+      "instructions": [
+        "Place all ingredients in a blend.  Blend until smooth.",
+        "Heat frying pan over medium heat.",
+        "Place about 1 cup of mixture on hot frying pan and fry on both sides until brown.",
+        "Serve Hot, with  powdered sugar, cream cheese, fruit, jam, lemon juice or sauteed vegetables."
+      ],
+      "preparationTime": "5 minutes",
+      "cookingTime": "10 minutes",
+      "totalTime": "15 minutes",
+      "servings": 4,
+      "nutritionalInformation": {
+        "calories": 289,
+        "fat": 14.3,
+        "protein": 11,
+        "carbohydrates": 28.5
+      },
+
+      "cuisine": ["French"],
+      "dietaryInformation": ["non-Vegetarian"],
+      "source": "Sister Jex",
+      "author": "Sister Jex",
+      "comments": [
+        { "user": "Liah", "comment": "Delicious! I make this all the time.", "rating": 5 },
+        { "user": "David", "comment": "Great recipe, easy to follow.", "rating": 5 }
+      ]
+    }
+
+### Update Recipe  adding comments
+POST http://localhost:8080/recipes HTTP/1.1
+content-Type: application/json
+
+{
+      "recipeTitle": "Crepes",
+      "description": "Easy delicious breakfast",
+      "ingredients": [
+        { "name": "eggs", "quantity": "3", "unit": "egg" },
+        { "name": "milk", "quantity": "1.5  ", "unit": "cups" },
+        { "name": "butter", "quantity": "3", "unit": "Tbsp" },
+        { "name": "salt", "quantity": "1/2", "unit": "tsp" },
+        { "name": "flour", "quantity": "1", "unit": "cup" }
+      ],
+      "instructions": [
+        "Place all ingredients in a blend.  Blend until smooth.",
+        "Heat frying pan over medium heat.",
+        "Place about 1 cup of mixture on hot frying pan and fry on both sides until brown.",
+        "Serve Hot, with  powdered sugar, cream cheese, fruit, jam, lemon juice or sauteed vegetables."
+      ],
+      "preparationTime": "5 minutes",
+      "cookingTime": "10 minutes",
+      "totalTime": "15 minutes",
+      "servings": 4,
+      "nutritionalInformation": {
+        "calories": 289,
+        "fat": 14.3,
+        "protein": 11,
+        "carbohydrates": 28.5
+      },
+
+      "cuisine": ["French"],
+      "dietaryInformation": ["non-Vegetarian"],
+      "source": "Sister Jex",
+      "author": "Sister Jex",
+      "comments": [
+        { "user": "Mom", "comment": "Easy breakfast, my favorite is to add cream cheese and fruit", "rating": 5 },
+        { "user": "Dad", "comment": "Adding Sauted veggies are the best", "rating": 5 }
+      ]
+    }

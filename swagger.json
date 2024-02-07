@@ -5,7 +5,7 @@
     "description": "Recipes API",
     "version": "1.0.0"
   },
-  "host": "blromero-cse341-week2.onrender.com",
+  "host": "https://recipes-0w83.onrender.com",
   "basePath": "/",
   "schemes": [
     "https"
@@ -17,6 +17,193 @@
         "responses": {
           "default": {
             "description": ""
+          }
+        }
+      }
+    },
+    "/recipes/": {
+      "get": {
+        "description": "",
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "post": {
+        "description": "",
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "recipeTitle": {
+                  "example": "any"
+                },
+                "description": {
+                  "example": "any"
+                },
+                "ingredients": {
+                  "example": "any"
+                },
+                "instructions": {
+                  "example": "any"
+                },
+                "preparationTime": {
+                  "example": "any"
+                },
+                "coookingTime": {
+                  "example": "any"
+                },
+                "totalTime": {
+                  "example": "any"
+                },
+                "servings": {
+                  "example": "any"
+                },
+                "nutritionalInformation": {
+                  "example": "any"
+                },
+                "cuisine": {
+                  "example": "any"
+                },
+                "dietaryInformation": {
+                  "example": "any"
+                },
+                "source": {
+                  "example": "any"
+                },
+                "author": {
+                  "example": "any"
+                },
+                "comments": {
+                  "example": "any"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Created"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/recipes/{id}": {
+      "get": {
+        "description": "",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "put": {
+        "description": "",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "recipeTitle": {
+                  "example": "any"
+                },
+                "description": {
+                  "example": "any"
+                },
+                "ingredients": {
+                  "example": "any"
+                },
+                "instructions": {
+                  "example": "any"
+                },
+                "preparationTime": {
+                  "example": "any"
+                },
+                "coookingTime": {
+                  "example": "any"
+                },
+                "totalTime": {
+                  "example": "any"
+                },
+                "servings": {
+                  "example": "any"
+                },
+                "nutritionalInformation": {
+                  "example": "any"
+                },
+                "cuisine": {
+                  "example": "any"
+                },
+                "dietaryInformation": {
+                  "example": "any"
+                },
+                "source": {
+                  "example": "any"
+                },
+                "author": {
+                  "example": "any"
+                },
+                "comments": {
+                  "example": "any"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      },
+      "delete": {
+        "description": "",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "500": {
+            "description": "Internal Server Error"
           }
         }
       }

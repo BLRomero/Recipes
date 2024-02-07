@@ -1,0 +1,129 @@
+[
+    {
+      "recipeTitle": "Siete Mares(7 Seas)",
+      "description": "Seafood Soup with various types of seafood.",
+      "ingredients": [
+        { "name": "seadfood mix (frozen)", "quantity": "1", "unit": "15 oz bag" },
+        { "name": "potato", "quantity": "3", "unit": "piece" },
+        { "name": "onion", "quantity": "1/2", "unit": "medium" },
+        { "name": "carrot", "quantity": "2", "unit": "piece" },
+        { "name": "garlic", "quantity": "2", "unit": "clove" },
+        { "name": "bay leaf", "quantity": "2-3", "unit": "leaves" },
+        { "name": "salt", "quantity": "to taste", "unit": "" },
+        { "name": "pepper", "quantity": "to taste", "unit": "" }
+      ],
+      "instructions": [
+        "Place frozen bag in a bowl with warm water to thaw about 10 minutes.",
+        "Dice potaatoes onions, and carrots into bite sized pieces.",
+        "Mince garlic.",
+        "Add potatoes, carrots, onion, garlic, and bay leaves to pot of water.",
+        "Bring to a boil and cook until potatoes and carrots are soft.",
+        "Add thawed seafood mix and cook 3-5 minutes until seafood is cooked.",
+        "Add salt and pepper to taste.",
+        "Offer lemon juice, tortillas chips, crackers, jalapenos, and or hot sauce.",
+        "Serve hot."
+      ],
+      "preparationTime": "10 minutes",
+      "cookingTime": "15 minutes",
+      "totalTime": "25 minutes",
+      "servings": 4,
+      "nutritionalInformation": {
+        "calories": 251,
+        "fat": 2.8,
+        "protein": 28.8,
+        "carbohydrates": 427.7
+      },
+
+      "cuisine": ["Mexican", "Seafood"],
+      "source": "Bonnette Romero",
+      "author": "Bonnette Romero",
+      "comments": [
+        { "user": "Alice", "comment": "Delicious! I make this all the time.", "rating": 5 },
+        { "user": "Bob", "comment": "Great recipe, easy to follow.", "rating": 4 }
+      ]
+    },
+    {
+      "recipeTitle": "Shepherd's Pie",
+      "description": "Hearty layered casserole.",
+      "ingredients": [
+        { "name": "potatoes", "quantity": "3", "unit": "large" },
+        { "name": "ground beef", "quantity": "2", "unit": "lbs" },
+        { "name": "cheddar cheese", "quantity": "1", "unit": "lb" },
+        { "name": "onion", "quantity": "1", "unit": "medium" },
+        { "name": "cream of mushroom soup", "quantity": "2", "unit": "8 oz cans" },
+        { "name": "cream cheese", "quantity": "8", "unit": "oz" },
+        { "name": "garlic powder", "quantity": "2", "unit": "tsp" },
+        { "name": "lemon pepper", "quantity": "2", "unit": "tsp" },
+        { "name": "milk", "quantity": "8", "unit": "oz" },
+        { "name": "salt", "quantity": "to taste", "unit": "" },
+        { "name": "pepper", "quantity": "to taste", "unit": "" }
+      ],
+      "instructions": [
+        "Dice potatoes, and boil until soft, mash and set aside.",
+        "Dice onion",
+        "In frying pan add onion, ground beef, lemon pepper, garlic powder. Cook until no longer pink.",
+        "To the ground beef add cream cheese, cream of mushroom soup, and milk. Heat and stir until combined. ",
+        "Pour into 13x9 pan drop spoonfuls of mashed potatoes on top, sprink;e cheese over the top. ",
+        "Bake in the oven 15 minutes or until cheese is melted.",
+        "Serve Hot."
+      ],
+
+      "preparationTime": "15 minutes",
+      "cookingTime": "25 minutes",
+      "totalTime": "40 minutes",
+      "servings": 8,
+      "nutritionalInformation": {
+        "calories": 375,
+        "fat": 25.8,
+        "protein": 12.7,
+        "carbohydrates": 23.4
+      },
+
+      "cuisine":[ "American"],
+      "dietaryInformation": ["Non-Vegetarian"],
+      "source": "Bonnette Romero",
+      "author": "Bonnette Romero",
+      "comments": [
+        { "user": "Janet", "comment": "Delicious! I make this all the time.", "rating": 5 },
+        { "user": "Bob", "comment": "Homemade comfort food", "rating": 4.5 }
+      ]
+    },
+    {
+      "recipeTitle": "Sesame Garlic Noodles",
+      "description": "Quick Easy, and yummy",
+      "ingredients": [
+        { "name": "Ramen Noodles", "quantity": "2", "unit": "3oz packages" },
+        { "name": "Sesame Oil", "quantity": "2", "unit": "tsp" },
+        { "name": "Garlic", "quantity": "2", "unit": "cloves" },
+        { "name": "soy sauce", "quantity": "1/4", "unit": "cup" },
+        { "name": "brown sugar", "quantity": "1", "unit": "tsp" },
+        { "name": "Siracha", "quantity": "2", "unit": "tsp" }
+      ],
+      "instructions": [
+        "Prepare noodles per package instructions, and drain water",
+        "Mince garlic",
+        "In a sauce pan combine oil, garlic, soy sauce, brown sugar, and siracha.  Heat on low until disolved.",
+        "Combine noodles and sauce.",
+        "Serve Hot."
+      ],
+      "preparationTime": "5 minutes",
+      "cookingTime": "10 minutes",
+      "totalTime": "15 minutes",
+      "servings": 4,
+      "nutritionalInformation": {
+        "calories": 250,
+        "fat": 12.5,
+        "protein": 5.9,
+        "carbohydrates": 29.3
+      },
+
+      "cuisine": ["Oriental"],
+      "dietaryInformation": ["Vegetarian"],
+      "source": "Liah Romero",
+      "author": "Liah Romero",
+      "comments": [
+        { "user": "Madison", "comment": "Delicious! I make this all the time.", "rating": 5 },
+        { "user": "Isaiah", "comment": "Great recipe, easy to follow.", "rating": 5 }
+      ]
+    }
+]
