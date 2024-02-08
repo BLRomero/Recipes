@@ -20,10 +20,10 @@ const getSingle = async (req, res) => {
 
 const createIngredient = async (req, res) => {
   const ingredient = {
-      recipeId: req.body.recipeId,
-      name: req.body.name,
-      quantity: req.body.quantity,
-      unit: req.body.unit
+    recipeId: req.body.recipeId,
+    name: req.body.name,
+    quantity: req.body.quantity,
+    unit: req.body.unit
   };
   const response = await mongodb.getDb().db().collection('ingredients').insertOne(ingredient);
   if (response.acknowledged) {
@@ -40,12 +40,12 @@ const updateIngredient = async (req, res) => {
     name: req.body.name,
     quantity: req.body.quantity,
     unit: req.body.unit
-};
+  };
   const response = await mongodb
     .getDb()
     .db()
     .collection('ingredients')
-    .updateOne({ _id: userId }, {$set:ingredient});
+    .updateOne({ _id: userId }, { $set: ingredient });
   console.log(response);
   if (response.modifiedCount > 0) {
     res.status(204).json({ message: `Ingredient with ID ${userId} updated successfully` });

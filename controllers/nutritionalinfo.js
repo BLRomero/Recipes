@@ -53,10 +53,12 @@ const updateNutrition = async (req, res) => {
     .getDb()
     .db()
     .collection('nutritionalinfo')
-    .updateOne({ _id: userId }, { $set:nutrition });
+    .updateOne({ _id: userId }, { $set: nutrition });
   console.log(response);
   if (response.modifiedCount > 0) {
-    res.status(204).json({ message: `Nutritional Information with ID ${userId} updated successfully` });
+    res
+      .status(204)
+      .json({ message: `Nutritional Information with ID ${userId} updated successfully` });
   } else {
     res.status(500).json(response.error || 'There was an error while updating the information.');
   }
@@ -71,7 +73,9 @@ const deleteNutrition = async (req, res) => {
     .deleteOne({ _id: userId }, true);
   console.log(response);
   if (response.deletedCount > 0) {
-    res.status(200).json({ message: `Nutritional information with ID ${userId} deleted successfully` });
+    res
+      .status(200)
+      .json({ message: `Nutritional information with ID ${userId} deleted successfully` });
   } else {
     res.status(500).json(response.error || 'There was an error while deleting the information.');
   }

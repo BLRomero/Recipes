@@ -93,7 +93,7 @@ content-Type: application/json
     }
 
 ###DELETE recipe
-DELETE http://localhost:8080/recipes/65c5028a6ab888e968a47f4a HTTP/1.1
+DELETE http://localhost:8080/recipes/65c56719efa773c334cd6ce9 HTTP/1.1
 
 
 

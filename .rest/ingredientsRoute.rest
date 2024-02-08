@@ -1,2 +1,82 @@
 ### ingredients
+GET http://localhost:8080/ingredients HTTP/1.1
+###
 GET http://localhost:8080/ingredients/65c3ad01265ce56f07228702 HTTP/1.1
+
+### Create ingredient
+POST http://localhost:8080/ingredients HTTP/1.1
+content-Type: application/json
+
+{ 
+  "recipeId": "65c3b384265ce56f07228719",
+  "name": "onion", 
+  "quantity": "1", 
+  "unit": "onion" 
+}
+### Update Ingredient
+PUT http://localhost:8080/ingredients/65c565beefa773c334cd6ce8 HTTP/1.1
+content-Type: application/json
+
+{ 
+  "recipeId": "65c3b384265ce56f07228719",
+  "name": "onion", 
+  "quantity": "2", 
+  "unit": "onion" 
+}
+
+###DELETE recipe
+DELETE http://localhost:8080/ingredients/65c565beefa773c334cd6ce8 HTTP/1.1
+
+
+
+
+
+### All ingredients by id
+GET http://localhost:8080/ingredients/65c3ad01265ce56f0722870b HTTP/1.1
+###
+GET http://localhost:8080/ingredients/65c3ad01265ce56f07228706 HTTP/1.1
+### 
+GET http://localhost:8080/ingredients/65c3ad01265ce56f0722870c HTTP/1.1
+### 
+GET http://localhost:8080/ingredients/65c3ad01265ce56f0722870e HTTP/1.1
+### 
+GET http://localhost:8080/ingredients/65c3ad01265ce56f0722870f HTTP/1.1
+### 
+GET http://localhost:8080/ingredients/65c3ad01265ce56f07228710 HTTP/1.1
+### 
+GET http://localhost:8080/ingredients/65c3ad01265ce56f0722870d HTTP/1.1
+### 
+GET http://localhost:8080/ingredients/65c3ad01265ce56f07228707 HTTP/1.1
+### 
+GET http://localhost:8080/ingredients/65c3ad01265ce56f07228700 HTTP/1.1
+### 
+GET http://localhost:8080/ingredients/65c3ad01265ce56f07228708 HTTP/1.1
+### 
+GET http://localhost:8080/ingredients/65c3ad01265ce56f07228705 HTTP/1.1
+### 
+GET http://localhost:8080/ingredients/65c3ad01265ce56f07228713 HTTP/1.1
+### 
+GET http://localhost:8080/ingredients/65c3ad01265ce56f07228704 HTTP/1.1
+### 
+GET http://localhost:8080/ingredients/65c3ad01265ce56f072286ff HTTP/1.1
+### 
+GET http://localhost:8080/ingredients/65c3ad01265ce56f07228703 HTTP/1.1
+### 
+GET http://localhost:8080/ingredients/65c3ad01265ce56f07228701 HTTP/1.1
+### 
+GET http://localhost:8080/ingredients/65c3ad01265ce56f072286fe HTTP/1.1
+### 
+GET http://localhost:8080/ingredients/65c3ad01265ce56f07228709 HTTP/1.1
+### 
+GET http://localhost:8080/ingredients/65c3ad01265ce56f0722870a HTTP/1.1
+### 
+GET http://localhost:8080/ingredients/65c3ad01265ce56f07228711 HTTP/1.1
+### 
+GET http://localhost:8080/ingredients/65c3ad01265ce56f07228712 HTTP/1.1
+### 
+GET http://localhost:8080/ingredients/65c3ad01265ce56f07228714 HTTP/1.1
+### 
+GET http://localhost:8080/ingredients/65c3ad01265ce56f07228715 HTTP/1.1
+### 
+GET http://localhost:8080/ingredients/65c3ad01265ce56f07228716 HTTP/1.1
+

@@ -25,15 +25,15 @@ const createRecipe = async (req, res) => {
     ingredients: req.body.ingredients,
     instructions: req.body.instructions,
     preparationTime: req.body.preparationTime,
-    coookingTime:req.body.coookingTime,
-    totalTime:req.body.totalTime,
-    servings:req.body.servings,
-    nutritionalInformation:req.body.nutritionalInformation,
-    cuisine:req.body.cuisine,
-    dietaryInformation:req.body.dietaryInformation,
-    source:req.body.source,
-    author:req.body.author,
-    comments:req.body.comments
+    coookingTime: req.body.coookingTime,
+    totalTime: req.body.totalTime,
+    servings: req.body.servings,
+    nutritionalInformation: req.body.nutritionalInformation,
+    cuisine: req.body.cuisine,
+    dietaryInformation: req.body.dietaryInformation,
+    source: req.body.source,
+    author: req.body.author,
+    comments: req.body.comments
   };
   const response = await mongodb.getDb().db().collection('recipes').insertOne(recipe);
   if (response.acknowledged) {
@@ -51,21 +51,21 @@ const updateRecipe = async (req, res) => {
     ingredients: req.body.ingredients,
     instructions: req.body.instructions,
     preparationTime: req.body.preparationTime,
-    coookingTime:req.body.coookingTime,
-    totalTime:req.body.totalTime,
-    servings:req.body.servings,
-    nutritionalInformation:req.body.nutritionalInformation,
-    cuisine:req.body.cuisine,
-    dietaryInformation:req.body.dietaryInformation,
-    source:req.body.source,
-    author:req.body.author,
-    comments:req.body.comments
+    coookingTime: req.body.coookingTime,
+    totalTime: req.body.totalTime,
+    servings: req.body.servings,
+    nutritionalInformation: req.body.nutritionalInformation,
+    cuisine: req.body.cuisine,
+    dietaryInformation: req.body.dietaryInformation,
+    source: req.body.source,
+    author: req.body.author,
+    comments: req.body.comments
   };
   const response = await mongodb
     .getDb()
     .db()
     .collection('recipes')
-    .updateOne({ _id: userId }, {$set:recipe});
+    .updateOne({ _id: userId }, { $set: recipe });
   console.log(response);
   if (response.modifiedCount > 0) {
     res.status(204).json({ message: `Recipe with ID ${userId} updated successfully` });

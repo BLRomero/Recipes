@@ -1,2 +1,36 @@
 ###  nutritional info
 GET http://localhost:8080/nutritionalinfo HTTP/1.1
+###
+GET http://localhost:8080/nutritionalinfo/65c3ac9d265ce56f072286fa HTTP/1.1
+###
+GET http://localhost:8080/nutritionalinfo/65c3ac9d265ce56f072286f8 HTTP/1.1
+###
+GET http://localhost:8080/nutritionalinfo/65c3ac9d265ce56f072286f9 HTTP/1.1
+
+
+### Create nutrition  
+POST http://localhost:8080/nutritionalinfo HTTP/1.1
+content-Type: application/json
+
+{
+  "recipeId": "65c56719efa773c334cd6ce9",
+  "calories": 589,
+  "fat": 20,
+  "protein": 15,
+  "carbohydrates": 7
+}
+
+### Update Recipe  
+PUT http://localhost:8080/nutritionalinfo/65c56763efa773c334cd6cea HTTP/1.1
+content-Type: application/json
+
+{
+  "calories": 289,
+  "fat": 14.3,
+  "protein": 11,
+  "carbohydrates": 28.5
+}
+      
+
+###DELETE recipe
+DELETE http://localhost:8080/nutritionalinfo/65c56763efa773c334cd6cea HTTP/1.1
