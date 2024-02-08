@@ -9,7 +9,7 @@ router.get('/:id', ingredientsController.getSingle);
 
 router.post('/', ingredientsController.createIngredient);
 
-router.put('/:id', ingredientsController.updateInrgedient);
+router.put('/:id', ingredientsController.updateIngredient);
 
 router.delete('/:id', ingredientsController.deleteIngredient);
 
