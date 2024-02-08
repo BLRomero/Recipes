@@ -1,19 +1,14 @@
-###localhost
-
+###localhost  recipes
 GET http://localhost:8080/recipes HTTP/1.1
-###
-GET http://localhost:8080/nutritionalinfo HTTP/1.1
-###
-GET http://localhost:8080/ingredients HTTP/1.1
 
 ###
-GET http://localhost:8080/recipes/65c3ac1f265ce56f072286f2 HTTP/1.1
+GET http://localhost:8080/recipes/65c3b384265ce56f07228719 HTTP/1.1
 
 ###
-GET http://localhost:8080/recipes/65c3ac1f265ce56f072286f3 HTTP/1.1
+GET http://localhost:8080/recipes/65c3b384265ce56f0722871a HTTP/1.1
 
 ###
-GET http://localhost:8080/recipes/65c3ac1f265ce56f072286f4 HTTP/1.1
+GET http://localhost:8080/recipes/65c3b384265ce56f0722871b HTTP/1.1
 
 ### Create recipe
 POST http://localhost:8080/recipes HTTP/1.1
@@ -57,7 +52,7 @@ content-Type: application/json
     }
 
 ### Update Recipe  adding comments
-POST http://localhost:8080/recipes/65c3b0ed9e69cd6eb551bf0a HTTP/1.1
+PUT http://localhost:8080/recipes/65c5028a6ab888e968a47f4a HTTP/1.1
 content-Type: application/json
 
 {
@@ -98,4 +93,7 @@ content-Type: application/json
     }
 
 ###DELETE recipe
-DELETE http://localhost:8080/recipes/65c3b0ed9e69cd6eb551bf0a HTTP/1.1
+DELETE http://localhost:8080/recipes/65c5028a6ab888e968a47f4a HTTP/1.1
+
+
+

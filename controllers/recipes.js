@@ -65,7 +65,7 @@ const updateRecipe = async (req, res) => {
     .getDb()
     .db()
     .collection('recipes')
-    .replaceOne({ _id: userId }, recipe);
+    .updateOne({ _id: userId }, {$set:recipe});
   console.log(response);
   if (response.modifiedCount > 0) {
     res.status(204).json({ message: `Recipe with ID ${userId} updated successfully` });
