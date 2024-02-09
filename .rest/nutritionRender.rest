@@ -1,0 +1,39 @@
+###
+GET https://wk5-8personalproject.onrender.com/nutritionalinfo HTTP/1.1
+
+###
+GET https://wk5-8personalproject.onrender.com/nutritionalinfo/65c3ac9d265ce56f072286fa HTTP/1.1
+
+###
+GET https://wk5-8personalproject.onrender.com/nutritionalinfo/65c3ac9d265ce56f072286f8 HTTP/1.1
+
+###
+GET https://wk5-8personalproject.onrender.com/nutritionalinfo/65c3ac9d265ce56f072286f9 HTTP/1.1
+
+###
+POST https://wk5-8personalproject.onrender.com/nutritionalinfo HTTP/1.1
+content-Type: application/json
+
+{
+  "recipeId": "123456",
+  "calories": 589,
+  "fat": 20,
+  "protein": 15,
+  "carbohydrates": 7
+}
+
+
+###
+PUT https://wk5-8personalproject.onrender.com/nutritionalinfo/65c5906498f1fb534c40a841 HTTP/1.1
+content-Type: application/json
+
+{
+  "recipeId": "123456",
+  "calories": 289,
+  "fat": 14.3,
+  "protein": 11,
+  "carbohydrates": 28.5
+}
+
+###
+DELETE  https://wk5-8personalproject.onrender.com/nutritionalinfo/65c5906498f1fb534c40a841 HTTP/1.1

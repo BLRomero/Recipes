@@ -1,0 +1,31 @@
+###
+GET https://wk5-8personalproject.onrender.com/ingredients HTTP/1.1
+###
+GET https://wk5-8personalproject.onrender.com/ingredients/65c3ad01265ce56f07228702 HTTP/1.1
+###
+GET https://wk5-8personalproject.onrender.com/ingredients/65c3ad01265ce56f0722870b HTTP/1.1
+
+###
+POST https://wk5-8personalproject.onrender.com/ingredients HTTP/1.1
+Content-Type: application/json
+
+{
+ "recipeId": "123456",
+ "name": "carrots",
+ "quantity": "3",
+ "unit": "carrots"
+}
+
+###
+PUT https://wk5-8personalproject.onrender.com/ingredients/65c58e0a98f1fb534c40a83f HTTP/1.1
+Content-Type: application/json
+
+{
+ "recipeId": "123456",
+ "name": "carrots",
+ "quantity": "7",
+ "unit": "carrots"
+}
+
+###
+DELETE  https://wk5-8personalproject.onrender.com/ingredients/65c58e0a98f1fb534c40a83f HTTP/1.1

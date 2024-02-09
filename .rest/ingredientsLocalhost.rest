@@ -7,22 +7,24 @@ GET http://localhost:8080/ingredients/65c3ad01265ce56f07228702 HTTP/1.1
 POST http://localhost:8080/ingredients HTTP/1.1
 content-Type: application/json
 
-{ 
-  "recipeId": "65c3b384265ce56f07228719",
-  "name": "onion", 
-  "quantity": "1", 
-  "unit": "onion" 
+{
+ "recipeId": "123456",
+ "name": "carrots",
+ "quantity": "3",
+ "unit": "carrots"
 }
+
 ### Update Ingredient
 PUT http://localhost:8080/ingredients/65c565beefa773c334cd6ce8 HTTP/1.1
 content-Type: application/json
 
-{ 
-  "recipeId": "65c3b384265ce56f07228719",
-  "name": "onion", 
-  "quantity": "2", 
-  "unit": "onion" 
+{
+ "recipeId": "123456",
+ "name": "carrots",
+ "quantity": "7",
+ "unit": "carrots"
 }
+
 
 ###DELETE recipe
 DELETE http://localhost:8080/ingredients/65c565beefa773c334cd6ce8 HTTP/1.1

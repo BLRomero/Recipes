@@ -13,7 +13,7 @@ POST http://localhost:8080/nutritionalinfo HTTP/1.1
 content-Type: application/json
 
 {
-  "recipeId": "65c56719efa773c334cd6ce9",
+  "recipeId": "123456",
   "calories": 589,
   "fat": 20,
   "protein": 15,
@@ -25,6 +25,7 @@ PUT http://localhost:8080/nutritionalinfo/65c56763efa773c334cd6cea HTTP/1.1
 content-Type: application/json
 
 {
+  "recipeId": "123456",
   "calories": 289,
   "fat": 14.3,
   "protein": 11,
