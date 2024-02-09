@@ -5,7 +5,7 @@
     "description": "Recipes API",
     "version": "1.0.0"
   },
-  "host": "recipes-0w83.onrender.com",
+  "host": "wk5-8personalproject.onrender.com",
   "basePath": "/",
   "schemes": [
     "https"
