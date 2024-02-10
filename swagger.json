@@ -10,9 +10,15 @@
   "schemes": [
     "https"
   ],
+  "tags": [ 
+    { "name": "Recipes", "description": "Operations related to recipes" },
+    { "name": "Nutritional Info", "description": "Operations related to nutritional information" },
+    { "name": "Ingredients", "description": "Operations related to ingredients" }
+  ],
   "paths": {
     "/api-docs": {
       "get": {
+        "tags": ["Recipes"], 
         "description": "",
         "responses": {
           "default": {
@@ -23,6 +29,7 @@
     },
     "/recipes/": {
       "get": {
+        "tags": ["Recipes"], 
         "description": "",
         "produces": [
           "application/json"
@@ -37,6 +44,7 @@
         }
       },
       "post": {
+        "tags": ["Recipes"], 
         "description": "",
         "parameters": [
           {
@@ -103,6 +111,8 @@
     },
     "/recipes/{id}": {
       "get": {
+        "tags": ["Recipes"], 
+        "tags": ["Recipes"], 
         "description": "",
         "produces": [
           "application/json"
@@ -125,6 +135,7 @@
         }
       },
       "put": {
+        "tags": ["Recipes"], 
         "description": "",
         "parameters": [
           {
@@ -198,6 +209,7 @@
         }
       },
       "delete": {
+        "tags": ["Recipes"], 
         "description": "",
         "parameters": [
           {
@@ -222,6 +234,7 @@
     },
     "/nutritionalinfo/": {
       "get": {
+        "tags": ["Nutritional Info"], 
         "description": "",
         "produces": [
           "application/json"
@@ -236,6 +249,7 @@
         }
       },
       "post": {
+        "tags": ["Nutritional Info"], 
         "description": "",
         "parameters": [
           {
@@ -284,6 +298,7 @@
     },
     "/nutritionalinfo/{id}": {
       "get": {
+        "tags": ["Nutritional Info"], 
         "description": "",
         "produces": [
           "application/json"
@@ -306,6 +321,7 @@
         }
       },
       "put": {
+        "tags": ["Nutritional Info"], 
         "description": "",
         "parameters": [
           {
@@ -361,6 +377,7 @@
         }
       },
       "delete": {
+        "tags": ["Nutritional Info"], 
         "description": "",
         "parameters": [
           {
@@ -385,6 +402,7 @@
     },
     "/ingredients/": {
       "get": {
+        "tags": ["Ingredients"], 
         "description": "",
         "produces": [
           "application/json"
@@ -399,6 +417,7 @@
         }
       },
       "post": {
+        "tags": ["Ingredients"], 
         "description": "",
         "parameters": [
           {
@@ -435,6 +454,7 @@
     },
     "/ingredients/{id}": {
       "get": {
+        "tags": ["Ingredients"], 
         "description": "",
         "produces": [
           "application/json"
@@ -457,6 +477,7 @@
         }
       },
       "put": {
+        "tags": ["Ingredients"], 
         "description": "",
         "parameters": [
           {
@@ -500,6 +521,7 @@
         }
       },
       "delete": {
+        "tags": ["Ingredients"], 
         "description": "",
         "parameters": [
           {
