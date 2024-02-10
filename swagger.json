@@ -8,7 +8,8 @@
   "host": "wk5-8personalproject.onrender.com",
   "basePath": "/",
   "schemes": [
-    "https"
+    "https",
+    "http"
   ],
   "tags": [ 
     { "name": "Recipes", "description": "Operations related to recipes" },
