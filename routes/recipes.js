@@ -2,14 +2,15 @@ const express = require('express');
 const router = express.Router();
 
 const recipesController = require('../controllers/recipes');
+const validation =  require('../middleware/validate');
 
 router.get('/', recipesController.getAll);
 
 router.get('/:id', recipesController.getSingle);
 
-router.post('/', recipesController.createRecipe);
+router.post('/', validation.validateRecipe, recipesController.createRecipe);
 
-router.put('/:id', recipesController.updateRecipe);
+router.put('/:id', validation.validateRecipe, recipesController.updateRecipe);
 
 router.delete('/:id', recipesController.deleteRecipe);
 
