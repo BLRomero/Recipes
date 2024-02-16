@@ -30,9 +30,9 @@ content-Type: application/json
         "Place about 1 cup of mixture on hot frying pan and fry on both sides until brown.",
         "Serve Hot, with  powdered sugar, cream cheese, fruit, jam, lemon juice or sauteed vegetables."
       ],
-      "preparationTime": "5 minutes",
-      "cookingTime": "10 minutes",
-      "totalTime": "15 minutes",
+      "preparationTime": "5",
+      "cookingTime": "10",
+      "totalTime": "15",
       "servings": 4,
       "nutritionalInformation": {
         "calories": 289,
@@ -41,7 +41,7 @@ content-Type: application/json
         "carbohydrates": 28.5
       },
 
-      "cuisine": ["French"],
+      "cuisine": "French",
       "dietaryInformation": ["non-Vegetarian"],
       "source": "Sister Jex",
       "author": "Sister Jex",
@@ -52,7 +52,7 @@ content-Type: application/json
     }
 
 ### Update Recipe  adding comments
-PUT http://localhost:8080/recipes/65c5028a6ab888e968a47f4a HTTP/1.1
+PUT http://localhost:8080/recipes/65cfcf0d69db4cdb73094c1d HTTP/1.1
 content-Type: application/json
 
 {
@@ -71,9 +71,9 @@ content-Type: application/json
         "Place about 1 cup of mixture on hot frying pan and fry on both sides until brown.",
         "Serve Hot, with  powdered sugar, cream cheese, fruit, jam, lemon juice or sauteed vegetables."
       ],
-      "preparationTime": "5 minutes",
-      "cookingTime": "10 minutes",
-      "totalTime": "15 minutes",
+      "preparationTime": "5",
+      "cookingTime": "10",
+      "totalTime": "15",
       "servings": 4,
       "nutritionalInformation": {
         "calories": 289,
@@ -82,7 +82,7 @@ content-Type: application/json
         "carbohydrates": 28.5
       },
 
-      "cuisine": ["French"],
+      "cuisine": "French",
       "dietaryInformation": ["non-Vegetarian"],
       "source": "Sister Jex",
       "author": "Sister Jex",
@@ -93,7 +93,7 @@ content-Type: application/json
     }
 
 ###DELETE recipe
-DELETE http://localhost:8080/recipes/65c56719efa773c334cd6ce9 HTTP/1.1
+DELETE http://localhost:8080/recipes/65cfac7234a74f2f4d8bbb98 HTTP/1.1
 
 
 

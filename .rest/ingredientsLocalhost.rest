@@ -1,5 +1,6 @@
 ### ingredients
 GET http://localhost:8080/ingredients HTTP/1.1
+
 ###
 GET http://localhost:8080/ingredients/65c3ad01265ce56f07228702 HTTP/1.1
 

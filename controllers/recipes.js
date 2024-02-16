@@ -1,35 +1,21 @@
 const mongodb = require('../db/connect');
-
 const ObjectId = require('mongodb').ObjectId;
 
 const getAll = async (req, res) => {
-  mongodb
-  .getDb()
-  .db()
-  .collection('recipes')
-  .find()
-  .toArray((err, lists) => {
-    if (err) {
-      res.status(400).json({ message: err });
-    }
+  const result = await mongodb.getDb().db().collection('recipes').find();
+  console.log(result);
+  result.toArray().then((lists) => {
     res.setHeader('Content-Type', 'application/json');
     res.status(200).json(lists);
   });
 };
 
 const getSingle = async (req, res) => {
-  const userId =
-  mongodb
-  .getDb()
-  .db()
-  .collection('recipes')
-  .find({ _id: userId })
-  .toArray((err, result) => {
-    if (err) {
-      res.status(400).json({ message: err });
-    }
+  const userId= new ObjectId(req.params.id);
+  const result= await mongodb.getDb().db().collection('recipes').find({ _id: userId });
+  result.toArray().then((lists) => {
     res.setHeader('Content-Type', 'application/json');
-    res.status(200).json(result[0]);
+    res.status(200).json(lists);
   });
 };
 
@@ -40,7 +26,7 @@ const createRecipe = async (req, res) => {
     ingredients: req.body.ingredients,
     instructions: req.body.instructions,
     preparationTime: req.body.preparationTime,
-    coookingTime: req.body.coookingTime,
+    cookingTime: req.body.cookingTime, // Corrected typo here
     totalTime: req.body.totalTime,
     servings: req.body.servings,
     nutritionalInformation: req.body.nutritionalInformation,
@@ -52,16 +38,15 @@ const createRecipe = async (req, res) => {
   };
   const response = await mongodb.getDb().db().collection('recipes').insertOne(recipe);
   if (response.acknowledged) {
+    console.log(response.acknowledged);
     res.status(201).json(response);
   } else {
     res.status(500).json(response.error || 'There was an error while creating this recipe.');
   }
 };
 
+
 const updateRecipe = async (req, res) => {
-  if (!ObjectId.isValid(req.params.id)) {
-    res.status(400).json('Must use a valid recipe id to update a recipe.');
-  }
   const userId = new ObjectId(req.params.id);
   const recipe = {
     recipeTitle: req.body.recipeTitle,
@@ -69,7 +54,7 @@ const updateRecipe = async (req, res) => {
     ingredients: req.body.ingredients,
     instructions: req.body.instructions,
     preparationTime: req.body.preparationTime,
-    coookingTime: req.body.coookingTime,
+    coookingTime: req.body.coookingTime, 
     totalTime: req.body.totalTime,
     servings: req.body.servings,
     nutritionalInformation: req.body.nutritionalInformation,
@@ -79,22 +64,15 @@ const updateRecipe = async (req, res) => {
     author: req.body.author,
     comments: req.body.comments
   };
-  const response = await mongodb
-    .getDb()
-    .db()
-    .collection('recipes')
-    .replaceOne({ _id: userId }, { $set: recipe });
+  const response = await mongodb.getDb().db().collection('recipes').updateOne({ _id: userId }, { $set: recipe });
   console.log(response);
   if (response.modifiedCount > 0) {
-    res
-    .status(204)
-    .json({ message: `Recipe with ID ${userId} updated successfully` });
+    res.status(204).json({ message: `Recipe with ID ${userId} updated successfully` });
   } else {
-    res
-    .status(500)
-    .json(response.error || 'There was an error while updating this recipe.');
+    res.status(500).json(response.error || 'There was an error while updating this recipe.');
   }
 };
+
 
 const deleteRecipe = async (req, res) => {
   if (!ObjectId.isValid(req.params.id)) {
@@ -103,20 +81,12 @@ const deleteRecipe = async (req, res) => {
     .json('Must use a valid recipe id to delete the recipe.');
   }
   const userId = new ObjectId(req.params.id);
-  const response = await mongodb
-    .getDb()
-    .db()
-    .collection('recipes')
-    .deleteOne({ _id: userId }, true);
+  const response = await mongodb.getDb().db().collection('recipes').deleteOne({ _id: userId }, true);
   console.log(response);
   if (response.deletedCount > 0) {
-    res
-    .status(200)
-    .json({ message: `Recipe with ID ${userId} deleted successfully` });
+    res.status(200).json({ message: `Recipe with ID ${userId} deleted successfully` });
   } else {
-    res
-    .status(500)
-    .json(response.error || 'There was an error while deleting this recipe.');
+    res.status(500).json(response.error || 'There was an error while deleting this recipe.');
   }
 };
 

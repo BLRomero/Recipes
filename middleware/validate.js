@@ -1,7 +1,7 @@
 /* eslint-disable no-undef */
 // validator.js
 
-const validator = require('../helpers/validate').default;
+const validator = require('../helpers/validate');
 
 const handleValidation = (req, res, next, validationRule) => {
   validator(req.body, validationRule, {}, (err, status) => {
@@ -21,17 +21,25 @@ const validateRecipe = (req, res, next) => {
   const validationRule = {
     recipeTitle: 'required|string',
     description: 'required|string',
-    ingredients: 'required|string',
-    preparationTime: 'integer|min:1',
-    cookingTime: 'integer|min:1',
-    totalTime: 'integer|min:1',
-    servings: 'integer|min:1',
-    nutritionalInformation: 'string',
+    ingredients: 'required|array',
+    preparationTime: 'required|integer|min:1',
+    cookingTime: 'required|integer|min:1',
+    totalTime: 'required|integer|min:1',
+    servings: 'required|integer|min:1',
+    'nutritionalInformation.calories': 'required|numeric|min:0',
+    'nutritionalInformation.protein': 'numeric|min:0',
+    'nutritionalInformation.carbohydrates': 'numeric|min:0',
+    'nutritionalInformation.cholesterol': 'numeric|min:0', // Assuming this is numeric
+    'nutritionalInformation.fat': 'numeric|min:0',
+    'nutritionalInformation.sodium': 'numeric|min:0',
+    'nutritionalInformation.addedSugar': 'numeric|min:0',
     cuisine: 'required|string',
     source: 'required|string',
     author: 'required|string',
-    comments: 'string'
+    comments: 'array' 
   };
+  
+  
 
   handleValidation(req, res, next, validationRule);
 };
@@ -48,8 +56,8 @@ const validateIngredient = (req, res, next) => {
 };
 
 const validateNutrition = (req, res, next) => {
-  
   const validationRule = {
+    recipeId: 'required|numeric|min:0',
     calories: 'required|numeric|min:0',
     protein: 'numeric|min:0',
     carbohydrates: 'numeric|min:0',

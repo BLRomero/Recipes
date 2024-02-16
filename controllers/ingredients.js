@@ -2,38 +2,22 @@
 const mongodb = require('../db/connect');
 const ObjectId = require('mongodb').ObjectId;
 
-const getAll = (req, res) => {
-  mongodb
-    .getDb()
-    .db()
-    .collection('ingredients')
-    .find()
-    .toArray((err, lists) => {
-      if (err) {
-        res.status(400).json({ message: err });
-      }
-      res.setHeader('Content-Type', 'application/json');
-      res.status(200).json(lists);
-    });
+const getAll = async (req, res) => {
+  const result = await mongodb.getDb().db().collection('ingredients').find();
+  console.log(result);
+  result.toArray().then((lists) => {
+    res.setHeader('Content-Type', 'application/json');
+    res.status(200).json(lists);
+  });
 };
 
 const getSingle = async (req, res) => {
-  if (!ObjectId.isValid((req.params.id))) {
-    res.status(400).json('Must use a valid ingredient id to find the ingredient.');
-  }
-  const userId = new ObjectId(req.params.id);
-  mongodb
-    .getDb()
-    .db()
-    .collection('ingredients')
-    .find({ _id: userId })
-    .toArray((err, result) => {
-      if (err) {
-        res.status(400).json({ message: err });
-      }
-      res.setHeader('Content-Type', 'application/json');
-      res.status(200).json(result[0]);
-    });
+  const userId= new ObjectId(req.params.id);
+  const result= await mongodb.getDb().db().collection('ingredients').find({ _id: userId });
+  result.toArray().then((lists) => {
+    res.setHeader('Content-Type', 'application/json');
+    res.status(200).json(lists);
+  });
 };
 
 const createIngredient = async (req, res) => {
@@ -45,6 +29,7 @@ const createIngredient = async (req, res) => {
   };
   const response = await mongodb.getDb().db().collection('ingredients').insertOne(ingredient);
   if (response.acknowledged) {
+    console.log(response.acknowledged);
     res.status(201).json(response);
   } else {
     res.status(500).json(response.error || 'There was an error while creating this ingredient.');
@@ -66,7 +51,7 @@ const updateIngredient = async (req, res) => {
     .getDb()
     .db()
     .collection('ingredients')
-    .replaceOne({ _id: userId }, { $set: ingredient });
+    .replaceOne({ _id: userId }, { ingredient });
   console.log(response);
   if (response.modifiedCount > 0) {
     res.status(204).json({ message: `Ingredient with ID ${userId} updated successfully` });
