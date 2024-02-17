@@ -16,7 +16,7 @@ content-Type: application/json
 }
 
 ### Update Ingredient
-PUT http://localhost:8080/ingredients/65c565beefa773c334cd6ce8 HTTP/1.1
+PUT http://localhost:8080/ingredients/65d0eaf4ba702cbe55dbf285 HTTP/1.1
 content-Type: application/json
 
 {
@@ -28,7 +28,7 @@ content-Type: application/json
 
 
 ###DELETE recipe
-DELETE http://localhost:8080/ingredients/65c565beefa773c334cd6ce8 HTTP/1.1
+DELETE http://localhost:8080/ingredients/65d0eaf4ba702cbe55dbf285 HTTP/1.1
 
 
 

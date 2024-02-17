@@ -52,7 +52,7 @@ content-Type: application/json
     }
 
 ### Update Recipe  adding comments
-PUT http://localhost:8080/recipes/65cfcf0d69db4cdb73094c1d HTTP/1.1
+PUT http://localhost:8080/recipes/65d0e6e6ba702cbe55dbf281 HTTP/1.1
 content-Type: application/json
 
 {
@@ -93,7 +93,7 @@ content-Type: application/json
     }
 
 ###DELETE recipe
-DELETE http://localhost:8080/recipes/65cfac7234a74f2f4d8bbb98 HTTP/1.1
+DELETE http://localhost:8080/recipes/65d0e6e6ba702cbe55dbf281 HTTP/1.1
 
 
 

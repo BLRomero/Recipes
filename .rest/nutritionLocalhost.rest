@@ -20,8 +20,8 @@ content-Type: application/json
   "carbohydrates": 7
 }
 
-### Update Recipe  
-PUT http://localhost:8080/nutritionalinfo/65c56763efa773c334cd6cea HTTP/1.1
+### Update nutrition
+PUT http://localhost:8080/nutritionalinfo/65d0e932ba702cbe55dbf283 HTTP/1.1
 content-Type: application/json
 
 {
@@ -34,4 +34,4 @@ content-Type: application/json
       
 
 ###DELETE recipe
-DELETE http://localhost:8080/nutritionalinfo/65c56763efa773c334cd6cea HTTP/1.1
+DELETE http://localhost:8080/nutritionalinfo/65d0e932ba702cbe55dbf283 HTTP/1.1
