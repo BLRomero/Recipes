@@ -30,9 +30,9 @@ content-Type: application/json
         "Place about 1 cup of mixture on hot frying pan and fry on both sides until brown.",
         "Serve Hot, with  powdered sugar, cream cheese, fruit, jam, lemon juice or sauteed vegetables."
       ],
-      "preparationTime": "5 minutes",
-      "cookingTime": "10 minutes",
-      "totalTime": "15 minutes",
+      "preparationTime": "5",
+      "cookingTime": "10",
+      "totalTime": "15",
       "servings": 4,
       "nutritionalInformation": {
         "calories": 289,
@@ -41,8 +41,8 @@ content-Type: application/json
         "carbohydrates": 28.5
       },
 
-      "cuisine": ["French"],
-      "dietaryInformation": ["non-Vegetarian"],
+      "cuisine": "French",
+      "dietaryInformation": "non-Vegetarian",
       "source": "Sister Jex",
       "author": "Sister Jex",
       "comments": [
@@ -53,7 +53,7 @@ content-Type: application/json
 
 
 ###
-PUT https://wk5-8personalproject.onrender.com/recipes/65c58fb198f1fb534c40a840 HTTP/1.1
+PUT https://wk5-8personalproject.onrender.com/recipes/65d0f23f59799250cadffb17 HTTP/1.1
 content-Type: application/json
 
 {
@@ -72,9 +72,9 @@ content-Type: application/json
         "Place about 1 cup of mixture on hot frying pan and fry on both sides until brown.",
         "Serve Hot, with  powdered sugar, cream cheese, fruit, jam, lemon juice or sauteed vegetables."
       ],
-      "preparationTime": "5 minutes",
-      "cookingTime": "10 minutes",
-      "totalTime": "15 minutes",
+      "preparationTime": "5",
+      "cookingTime": "10",
+      "totalTime": "15",
       "servings": 4,
       "nutritionalInformation": {
         "calories": 289,
@@ -83,8 +83,8 @@ content-Type: application/json
         "carbohydrates": 28.5
       },
 
-      "cuisine": ["French"],
-      "dietaryInformation": ["non-Vegetarian"],
+      "cuisine": "French",
+      "dietaryInformation": "non-Vegetarian",
       "source": "Sister Jex",
       "author": "Sister Jex",
       "comments": [
@@ -94,4 +94,4 @@ content-Type: application/json
     }
 
 ###
-DELETE  https://wk5-8personalproject.onrender.com/recipes/65c58fb198f1fb534c40a840 HTTP/1.1
+DELETE  https://wk5-8personalproject.onrender.com/recipes/65d0f23f59799250cadffb17 HTTP/1.1
