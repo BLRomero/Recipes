@@ -14,7 +14,6 @@ const getAll = async (req, res) => {
   }
 };
 
-
 const getSingle = async (req, res) => {
   try {
     const userId = new ObjectId(req.params.id);
@@ -33,7 +32,6 @@ const getSingle = async (req, res) => {
     res.status(500).json({ error: 'Internal server error' });
   }
 };
-
 
 const createRecipe = async (req, res) => {
   try {
@@ -67,8 +65,6 @@ const createRecipe = async (req, res) => {
   }
 };
 
-
-
 const updateRecipe = async (req, res) => {
   const userId = new ObjectId(req.params.id);
   const recipe = {
@@ -101,8 +97,6 @@ const updateRecipe = async (req, res) => {
     res.status(500).json({ error: 'There was an error while updating this recipe.' });
   }
 };
-
-
 
 const deleteRecipe = async (req, res) => {
   if (!ObjectId.isValid(req.params.id)) {
