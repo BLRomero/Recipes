@@ -1,6 +1,7 @@
 /* eslint-disable no-undef */
 const express = require('express');
 const bodyParser = require('body-parser');
+const session = require('express-session');
 const mongodb = require('./db/connect');
 // eslint-disable-next-line no-undef
 const port = process.env.PORT || 8080;
@@ -13,6 +14,14 @@ require('dotenv').config();
 const secret = process.env.AUTH_SECRET;
 const clientId = process.env.AUTH_CLIENT_ID;
 
+// Set up session middleware
+app.use(
+  session({
+    secret: 'your-secret-key', // Change this to a random string
+    resave: false,
+    saveUninitialized: false
+  })
+);
 
 const config = {
   authRequired: false,
@@ -23,23 +32,41 @@ const config = {
   issuerBaseURL: 'https://dev-8qtdanvxriykr2k2.us.auth0.com'
 };
 
-
 // auth router attaches /login, /logout, and /callback routes to the baseURL
 app.use(auth(config));
 
-// req.isAuthenticated is provided from the auth router
+// Route handlers for managing user sessions
 app.get('/', (req, res) => {
-  res.send(req.oidc.isAuthenticated() ? 'Logged in' : 'Logged out');
+  if (req.session.user) {
+    res.send(`Welcome back, ${req.session.user.name}!`);
+  } else {
+    res.send('Welcome!');
+  }
 });
 
+app.get('/login', (req, res) => {
+  // Perform authentication logic
+  req.session.user = { name: 'John' }; // Store user information in the session
+  res.redirect('/');
+});
 
-app
-  .use(bodyParser.json())
-  .use((req, res, next) => {
-    res.setHeader('Access-Control-Allow-Origin', '*');
-    next();
-  })
-  .use('/', require('./routes'));
+app.get('/logout', (req, res) => {
+  req.session.destroy(); // Destroy the session
+  res.redirect('/');
+});
+
+// Handle callback from Auth0 after authentication
+app.get('/callback', (req, res, next) => {
+  // Handle callback logic here, such as setting up the user session
+  res.redirect('/'); // Redirect to the home page or any other desired route
+});
+
+app.use(bodyParser.json()).use((req, res, next) => {
+  res.setHeader('Access-Control-Allow-Origin', '*');
+  next();
+});
+
+app.use('/', require('./routes'));
 
 process.on('uncaughtException', (err, origin) => {
   console.log(process.stderr.fd, `Caught exception: ${err}\n` + `Exception origin: ${origin}`);
