@@ -17,7 +17,7 @@ const clientId = process.env.AUTH_CLIENT_ID;
 // Set up session middleware
 app.use(
   session({
-    secret: 'your-secret-key', // Change this to a random string
+    secret: secret,
     resave: false,
     saveUninitialized: false
   })
@@ -50,13 +50,22 @@ app.get('/login', (req, res) => {
   res.redirect('/');
 });
 
+// Add this route handler for logging out
 app.get('/logout', (req, res) => {
-  req.session.destroy(); // Destroy the session
-  res.redirect('/');
+  // Destroy the session
+  req.session.destroy((err) => {
+    if (err) {
+      console.error('Error destroying session:', err);
+      res.status(500).send('Error logging out');
+    } else {
+      // Redirect to the homepage or any other desired route after logout
+      res.redirect('/');
+    }
+  });
 });
 
 // Handle callback from Auth0 after authentication
-app.get('/callback', (req, res, next) => {
+app.get('/callback', (req, res) => {
   // Handle callback logic here, such as setting up the user session
   res.redirect('/'); // Redirect to the home page or any other desired route
 });
