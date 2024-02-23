@@ -3,9 +3,8 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const session = require('express-session');
 const mongodb = require('./db/connect');
-// eslint-disable-next-line no-undef
-const port = process.env.PORT || 8080;
 const app = express();
+const port = process.env.PORT || 8080;
 const { auth } = require('express-openid-connect');
 
 // Load environment variables from .env file
@@ -13,6 +12,8 @@ require('dotenv').config();
 
 const secret = process.env.AUTH_SECRET ;
 const clientId = process.env.AUTH_CLIENT_ID ;
+const baseURL = process.env.BASE_URL;
+const issuerBaseURL = process.env.ISSUER_BASE_URL
 
 // Set up session middleware
 app.use(
@@ -27,9 +28,9 @@ const config = {
   authRequired: false,
   auth0Logout: true,
   secret: secret,
-  baseURL: 'http://localhost:8080',
-  clientID: clientId,
-  issuerBaseURL: 'https://dev-8qtdanvxriykr2k2.us.auth0.com'
+  baseURL: baseURL,
+  clientID: clientId ,
+  issuerBaseURL: issuerBaseURL
 };
 
 // auth router attaches /login, /logout, and /callback routes to the baseURL
@@ -44,25 +45,10 @@ app.get('/', (req, res) => {
   }
 });
 
-app.get('/login', (req, res) => {
-  // Perform authentication logic
-  req.session.user = { name: 'John' }; // Store user information in the session
-  res.redirect('/');
-});
-
-// Add this route handler for logging out
-app.get('/logout', (req, res) => {
-  // Destroy the session
-  req.session.destroy((err) => {
-    if (err) {
-      console.error('Error destroying session:', err);
-      res.status(500).send('Error logging out');
-    } else {
-      // Redirect to the homepage or any other desired route after logout
-      res.redirect('/');
-    }
-  });
-});
+// req.isAuthenticated is provided from the auth router
+app.get("/", (req, res) => {
+  res.send(req.oidc.isAuthenticated() ? "Logged in" : "Logged out");
+}); 
 
 // Handle callback from Auth0 after authentication
 app.get('/callback', (req, res) => {
@@ -89,3 +75,4 @@ mongodb.initDb((err) => {
     console.log(`Connected to DB and listening on ${port}`);
   }
 });
+
