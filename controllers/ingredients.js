@@ -46,7 +46,7 @@ const createIngredient = async (req, res) => {
 
     if (response.acknowledged) {
       console.log(response.acknowledged);
-      res.status(201).json(response);
+      res.status(201).json({ message: 'Ingredient created successfully', ingredient});
     } else {
       res.status(500).json(response.error || 'There was an error while creating this ingredient.');
     }
