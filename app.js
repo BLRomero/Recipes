@@ -11,7 +11,7 @@ const { auth } = require('express-openid-connect');
 // Load environment variables from .env file
 require('dotenv').config();
 
-const secret = process.env.AUTH_SECRET;
+const secret = process.env.AUTH_SECRET || Iixp-_8zIpMqgXwTXdLwO3APe9MQFtbqgK2jG3cMnxOrPpa_Nqi5vZJuU0P6U6eO;
 const clientId = process.env.AUTH_CLIENT_ID;
 
 // Set up session middleware
