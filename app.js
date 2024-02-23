@@ -12,7 +12,7 @@ const { auth } = require('express-openid-connect');
 require('dotenv').config();
 
 const secret = process.env.AUTH_SECRET || "Iixp-_8zIpMqgXwTXdLwO3APe9MQFtbqgK2jG3cMnxOrPpa_Nqi5vZJuU0P6U6eO";
-const clientId = process.env.AUTH_CLIENT_ID;
+const clientId = process.env.AUTH_CLIENT_ID || hnG7My2p3vxJgRZSbWLdAdvlgsxHGaME;
 
 // Set up session middleware
 app.use(
