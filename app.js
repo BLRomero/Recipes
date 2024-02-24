@@ -23,7 +23,7 @@ app.use(
     saveUninitialized: false
   })
 );
-
+// authentication 
 const config = {
   authRequired: false,
   auth0Logout: true,
@@ -36,25 +36,16 @@ const config = {
 // auth router attaches /login, /logout, and /callback routes to the baseURL
 app.use(auth(config));
 
-// Route handlers for managing user sessions
-app.get('/', (req, res) => {
-  if (req.session.user) {
-    res.send(`Welcome back, ${req.session.user.name}!`);
-  } else {
-    res.send('Welcome!');
-  }
-});
-
 // req.isAuthenticated is provided from the auth router
 app.get("/", (req, res) => {
   res.send(req.oidc.isAuthenticated() ? "Logged in" : "Logged out");
 }); 
 
-// Handle callback from Auth0 after authentication
-app.get('/callback', (req, res) => {
-  // Handle callback logic here, such as setting up the user session
-  res.redirect('/'); // Redirect to the home page or any other desired route
-});
+// // Handle callback from Auth0 after authentication
+// app.get('/callback', (req, res) => {
+//   // Handle callback logic here, such as setting up the user session
+//   res.redirect('/'); // Redirect to the home page or any other desired route
+// });
 
 app.use(bodyParser.json()).use((req, res, next) => {
   res.setHeader('Access-Control-Allow-Origin', '*');
