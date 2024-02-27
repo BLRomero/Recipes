@@ -41,12 +41,6 @@ app.get("/", (req, res) => {
   res.send(req.oidc.isAuthenticated() ? "Logged in" : "Logged out");
 }); 
 
-// // Handle callback from Auth0 after authentication
-// app.get('/callback', (req, res) => {
-//   // Handle callback logic here, such as setting up the user session
-//   res.redirect('/'); // Redirect to the home page or any other desired route
-// });
-
 app.use(bodyParser.json()).use((req, res, next) => {
   res.setHeader('Access-Control-Allow-Origin', '*');
   next();

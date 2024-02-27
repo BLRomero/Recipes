@@ -5,7 +5,7 @@
     "description": "Recipes API",
     "version": "1.0.0"
   },
-  "host": "wk5-8personalproject.onrender.com",
+  "host": "wk5-8personalproject.onrender.com" ,
   "basePath": "/",
   "schemes": [
     "https",
@@ -112,7 +112,6 @@
     },
     "/recipes/{id}": {
       "get": {
-        "tags": ["Recipes"], 
         "tags": ["Recipes"], 
         "description": "",
         "produces": [
