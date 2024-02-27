@@ -3,16 +3,17 @@ const router = express.Router();
 
 const recipesController = require('../controllers/recipes');
 const validation =  require('../middleware/validate');
+const { requiresAuth } = require('express-openid-connect');
 
-router.get('/', recipesController.getAll);
+router.get('/', requiresAuth(), recipesController.getAll);
 
-router.get('/:id', recipesController.getSingle);
+router.get('/:id', requiresAuth(), recipesController.getSingle);
 
-router.post('/', validation.validateRecipe, recipesController.createRecipe);
+router.post('/', requiresAuth(), validation.validateRecipe, recipesController.createRecipe);
 
-router.put('/:id', validation.validateRecipe, recipesController.updateRecipe);
+router.put('/:id', requiresAuth(), validation.validateRecipe, recipesController.updateRecipe);
 
-router.delete('/:id', recipesController.deleteRecipe);
+router.delete('/:id', requiresAuth(), recipesController.deleteRecipe);
 
 // eslint-disable-next-line no-undef
 module.exports = router;
