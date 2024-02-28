@@ -6,6 +6,7 @@ const mongodb = require('./db/connect');
 const app = express();
 const port = process.env.PORT || 8080;
 const { auth } = require('express-openid-connect');
+const { requiresAuth } = require('express-openid-connect');
 
 // Load environment variables from .env file
 require('dotenv').config();
@@ -40,6 +41,10 @@ app.use(auth(config));
 app.get("/", (req, res) => {
   res.send(req.oidc.isAuthenticated() ? "Logged in" : "Logged out");
 }); 
+
+app.get("/profile", requiresAuth(), (req, res) => {
+  res.send(JSON.stringify(req.oidc.user));
+});
 
 app.use(bodyParser.json()).use((req, res, next) => {
   res.setHeader('Access-Control-Allow-Origin', '*');
