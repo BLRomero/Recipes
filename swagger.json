@@ -5,9 +5,9 @@
     "description": "Recipes API",
     "version": "1.0.0"
   },
-  "host": ["localhost:8080'", "wk5-8personalproject.onrender.com"],
+  "host": [ "wk5-8personalproject.onrender.com"],
   "basePath": "/",
-  "schemes": ["http", "https"],
+  "schemes": [ "https"],
   "tags": [ 
     { "name": "Recipes", "description": "Operations related to recipes" },
     { "name": "Nutritional Info", "description": "Operations related to nutritional information" },
